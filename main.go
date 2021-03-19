@@ -10,8 +10,9 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	"github.com/rishi-org-stack/ItsaboutYou-b/model"
 )
-
+ 
 func connect() *mongo.Collection {
 	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb+srv://rishijha1709:rishijha1709@cluster0.2lkrw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"))
 	if err != nil {
@@ -55,25 +56,10 @@ func get(){
 	fmt.Println(p)
 }
 func main() {
-	// client, err := mongo.NewClient(options.Client().ApplyURI("mongodb+srv://rishijha1709:rishijha1709@cluster0.2lkrw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"))
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// ctx, _ := context.WithTimeout(context.Background(), 50*time.Second)
-	// err = client.Connect(ctx)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// defer client.Disconnect(ctx)
-	// err = client.Ping(ctx, readpref.Primary())
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// databases, err := client.ListDatabaseNames(ctx, bson.M{})
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// fmt.Println(databases)
-	// insert()
-	get()
+	db := &model.DB{
+
+	}
+	db = model.CreateDb().Connect()
+	db.Get()
+	// get()
 }

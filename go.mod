@@ -1,4 +1,4 @@
-module github.com/rishi-org-stack
+module github.com/rishi-org-stack/ItsaboutYou-b
 
 go 1.16
 
