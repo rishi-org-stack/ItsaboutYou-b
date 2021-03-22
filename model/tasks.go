@@ -10,3 +10,4 @@ type Task struct{
 	Priority int`bson:"priority"`
 	Completed bool`bson:"completed"`
 }
+//TODO:look on the diagram and make changes

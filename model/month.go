@@ -9,3 +9,4 @@ type Month struct{
 	Earning float64`bson:"earning"`
 	TotlTasksComplted int `bson:"total_tasks_completed"`
 }
+//TODO:look on the diagram and make changes

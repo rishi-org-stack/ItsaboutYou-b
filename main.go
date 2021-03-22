@@ -59,7 +59,13 @@ func main() {
 	db := &model.DB{
 
 	}
-	db = model.CreateDb().Connect()
-	db.Get()
+	db = model.Instantiate()
+	db = db.Connect()
+	p := &person{}
+	p.Name = "jhaji"
+	db.Type =p
+	db.CreateDb("okgettingit")
+	db.LinkToCollection("jihaja")
+	db.Insert()
 	// get()
 }
